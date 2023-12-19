@@ -80,17 +80,17 @@ class ImageManager
      */
     public function cache(Closure $callback, $lifetime = null, $returnObj = false)
     {
-        if (class_exists('Intervention\\Image\\ImageCache')) {
-            // create imagecache
-            $imagecache = new ImageCache($this);
+//        if (class_exists('Intervention\\Image\\ImageCache')) {
+//            // create imagecache
+//            $imagecache = new ImageCache($this);
 
-            // run callback
-            if (is_callable($callback)) {
-                $callback($imagecache);
-            }
+//            // run callback
+//            if (is_callable($callback)) {
+//                $callback($imagecache);
+//            }
 
-            return $imagecache->get($lifetime, $returnObj);
-        }
+//            return $imagecache->get($lifetime, $returnObj);
+//        }
 
         throw new MissingDependencyException(
             "Please install package intervention/imagecache before running this function."

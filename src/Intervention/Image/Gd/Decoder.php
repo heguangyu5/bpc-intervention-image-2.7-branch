@@ -110,7 +110,7 @@ class Decoder extends \Intervention\Image\AbstractDecoder
      * @param  Imagick $object
      * @return \Intervention\Image\Image
      */
-    public function initFromImagick(\Imagick $object)
+    public function initFromImagick(/*\Imagick */$object)
     {
         throw new NotSupportedException(
             "Gd driver is unable to init from Imagick object."

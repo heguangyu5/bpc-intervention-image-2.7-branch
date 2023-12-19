@@ -132,8 +132,13 @@ abstract class AbstractDriver
      */
     public function getDriverName()
     {
-        $reflect = new \ReflectionClass($this);
-        $namespace = $reflect->getNamespaceName();
+        if (defined('__BPC__')) {
+            $class = get_class($this);
+            $namespace = substr($class, 0, strrpos($class, "\\"));
+        } else {
+            $reflect = new \ReflectionClass($this);
+            $namespace = $reflect->getNamespaceName();
+        }
 
         return substr(strrchr($namespace, "\\"), 1);
     }
